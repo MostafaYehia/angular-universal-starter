@@ -21,6 +21,8 @@ if (environment.hmr) {
   }
 } else {
   document.addEventListener('DOMContentLoaded', () => {
-    bootstrap();
+    document.addEventListener('DOMContentLoaded', () => {
+       bootstrap();
+     });
   });
 }

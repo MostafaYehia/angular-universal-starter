@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "starter": {
+    "angular-universal-starter": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/starter",
+            "outputPath": "dist/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -75,22 +75,22 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "starter:build"
+            "browserTarget": "angular-universal-starter:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "starter:build:production"
+              "browserTarget": "angular-universal-starter:build:production"
             },
             "hmr": {
               "hmr": true,
-              "browserTarget": "starter:build:hmr"
+              "browserTarget": "angular-universal-starter:build:hmr"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "starter:build"
+            "browserTarget": "angular-universal-starter:build"
           }
         },
         "test": {
@@ -127,15 +127,38 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "starter:serve"
+            "devServerTarget": "angular-universal-starter:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "starter:serve:production"
+              "devServerTarget": "angular-universal-starter:serve:production"
+            }
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/server",
+            "main": "src/main.server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": {
+                "scripts": false,
+                "styles": true
+              }
             }
           }
         }
       }
     }},
-  "defaultProject": "starter"
+  "defaultProject": "angular-universal-starter"
 }
