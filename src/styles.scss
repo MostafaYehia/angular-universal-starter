@@ -1,0 +1,29 @@
+/*
+ Custom Css where you can modify any of the Sass variables
+ and maps from boostrap stack
+ */
+@import 'scss/custom.scss';
+
+
+/*
+ include-media is a Sass library for writing CSS media queries 
+ in an easy and maintainable way, using a natural and simplistic syntax
+ * Example
+ - @include media("≥phone", "≤tablet") {
+    line-height: 1.5;
+   }
+ - @include media(">desktop", "<=1150px")
+ - Base on height -> @include media("height>small", "height<=medium") 
+ */
+@import "~include-media/dist/_include-media.scss";
+$breakpoints: (phone: 320px, tablet: 768px, laptop: 1024px);
+
+
+body {
+    background: $gray-800;
+    color: $gray-200;
+
+    @include media("≥phone", "≤tablet") {
+        background: yellow;
+    }
+}

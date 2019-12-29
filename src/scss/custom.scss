@@ -1,0 +1,14 @@
+// Custom.scss
+
+// Your variable overrides
+$body-bg: rgb(221, 221, 221);
+$body-color: rgb(29, 29, 29);
+
+$theme-colors: (
+  "primary": #2e0030,
+  "secondry": #006bc2,
+  "danger": #ff4136
+);
+
+
+@import "~node_modules/bootstrap/scss/bootstrap";
