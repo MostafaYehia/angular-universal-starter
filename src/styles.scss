@@ -24,6 +24,6 @@ body {
     color: $gray-200;
 
     @include media("≥phone", "≤tablet") {
-        background: yellow;
+        background: $gray-600;
     }
 }
