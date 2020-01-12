@@ -161,6 +161,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-universal-starter"
+    }
+  },
+  "defaultProject": "angular-universal-starter",
+  "cli": {
+    "analytics": false
+  }
 }
