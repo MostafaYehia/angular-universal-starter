@@ -3,8 +3,11 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { FeatureRoutingModule } from './feature-routing.module';
 
+// Containers
+import { FeatureComponent } from './containers/feature/feature.component';
 
-const COMPONENTS = [];
+
+const COMPONENTS = [FeatureComponent];
 const DIRECTIVES = [];
 
 const EXPORTS = [];

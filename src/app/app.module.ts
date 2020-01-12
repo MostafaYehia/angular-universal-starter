@@ -22,8 +22,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
-    CoreModule,
-    FeatureModule
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
